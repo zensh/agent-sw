@@ -4,16 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev --port 3000",
     "build": "vite build",
     "build:esm": "vite build -f es",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.4",
+    "@sveltejs/kit": "^2.5.27",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tsconfig/svelte": "^5.0.4",
     "@vite-pwa/assets-generator": "^0.2.6",
+    "@vite-pwa/sveltekit": "^0.6.5",
+    "fast-glob": "^3.3.2",
     "svelte": "^4.2.19",
     "svelte-check": "^4.0.2",
     "tslib": "^2.7.0",

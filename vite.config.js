@@ -1,16 +1,17 @@
-import { VitePWA } from 'vite-plugin-pwa'
 import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { sveltekit } from '@sveltejs/kit/vite'
+import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte(), VitePWA({
+  plugins: [sveltekit(), SvelteKitPWA({
     strategies: 'injectManifest',
     srcDir: 'src',
-    filename: 'sw.ts',
+    filename: 'service-worker.ts',
     registerType: 'prompt',
-    injectRegister: false,
-
+    injectRegister: 'auto',
+    scope: '/',
+    base: '/',
     pwaAssets: {
       disabled: false,
       config: true,
